@@ -37,6 +37,7 @@ PLAY_COMMAND = get_command("PLAY_COMMAND")
 @app.on_message(
     command(PLAY_COMMAND)
     & filters.group
+    & ~filters.edited
     & ~BANNED_USERS
 )
 @PlayWrapper
@@ -113,7 +114,6 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
-                print(e)
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -164,7 +164,6 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
-                print(e)
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -213,7 +212,7 @@ async def play_commnd(
                 and not config.SPOTIFY_CLIENT_SECRET
             ):
                 return await mystic.edit_text(
-                    "𝐓𝐡𝐢𝐬 𝐁𝐨𝐭 𝐂𝐚𝐧'𝐭 𝐏𝐥𝐚𝐲 𝐒𝐩𝐨𝐭𝐢𝐟𝐲 𝐓𝐫𝐜𝐤𝐬 𝐨𝐫 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭𝐬 𝐑𝐞𝐩𝐨𝐫𝐭 [𝐁𝐠𝐭 𝐂𝐡𝐚𝐭](https://t.me/Bgt_Chat)."
+                    "ᴛʜɪs ʙᴏᴛ ᴄᴀɴ'ᴛ ᴩʟᴀʏ sᴩᴏᴛɪғʏ ᴛʀᴀᴄᴋs ᴀɴᴅ ᴩʟᴀʏʟɪsᴛs, ᴩʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ ᴍʏ ᴏᴡɴᴇʀ ᴀɴᴅ ᴀsᴋ ʜɪᴍ ᴛᴏ ᴀᴅᴅ sᴩᴏᴛɪғʏ ᴩʟᴀʏᴇʀ."
                 )
             if "track" in url:
                 try:
@@ -289,7 +288,6 @@ async def play_commnd(
             try:
                 details, track_id = await Resso.track(url)
             except Exception as e:
-                print(e)
                 return await mystic.edit_text(_["play_3"])
             streamtype = "youtube"
             img = details["thumb"]
@@ -322,7 +320,6 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
-                print(e)
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -336,14 +333,13 @@ async def play_commnd(
                 await Bikashh.stream_call(url)
             except NoActiveGroupCall:
                 await mystic.edit_text(
-                    "There's An Error In The Bot Then Report [𝐁𝐠𝐭 𝐂𝐡𝐚𝐭](https://t.me/Bgt_chat) AN Error"
+                    "ᴛʜᴇʀᴇ's ᴀɴ ᴇʀʀᴏʀ ɪɴ ᴛʜᴇ ʙᴏᴛ, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴛᴏ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ ᴀs sᴏᴏɴ ᴀs ᴩᴏssɪʙʟᴇ."
                 )
                 return await app.send_message(
                     config.LOG_GROUP_ID,
-                    "𝐏𝐥𝐞𝐚𝐬𝐞 𝐓𝐮𝐫𝐧 𝐎𝐧 𝐕𝐜 𝐓𝐨 𝐏𝐥𝐚𝐲 𝐌𝐮𝐬𝐢𝐜.",
+                    "ᴩʟᴇᴀsᴇ ᴛᴜʀɴ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴛᴏ sᴛʀᴇᴀᴍ ᴜʀʟ.",
                 )
             except Exception as e:
-                print(e)
                 return await mystic.edit_text(
                     _["general_3"].format(type(e).__name__)
                 )
@@ -362,7 +358,6 @@ async def play_commnd(
                     forceplay=fplay,
                 )
             except Exception as e:
-                print(e)
                 ex_type = type(e).__name__
                 err = (
                     e
@@ -430,7 +425,6 @@ async def play_commnd(
                 forceplay=fplay,
             )
         except Exception as e:
-            print(e)
             ex_type = type(e).__name__
             err = (
                 e
@@ -576,7 +570,6 @@ async def play_music(client, CallbackQuery, _):
             forceplay=ffplay,
         )
     except Exception as e:
-        print(e)
         ex_type = type(e).__name__
         err = (
             e
@@ -593,7 +586,7 @@ async def play_music(client, CallbackQuery, _):
 async def anonymous_check(client, CallbackQuery):
     try:
         await CallbackQuery.answer(
-            "🥀 You're An Anonymous Admin\n\nRevert To Normal TheN Use Me 💖.",
+            "ʏᴏᴜ'ʀᴇ ᴀɴ ᴀɴᴏɴʏᴍᴏᴜs ᴀᴅᴍɪɴ\n\nʀᴇᴠᴇʀᴛ ʙᴀᴄᴋ ᴛᴏ ᴜsᴇʀ ᴀᴄᴄᴏᴜɴᴛ ғᴏʀ ᴜsɪɴɢ ᴍᴇ.",
             show_alert=True,
         )
     except:
@@ -687,7 +680,6 @@ async def play_playlists_command(client, CallbackQuery, _):
             forceplay=ffplay,
         )
     except Exception as e:
-        print(e)
         ex_type = type(e).__name__
         err = (
             e
@@ -769,4 +761,4 @@ async def slider_queries(client, CallbackQuery, _):
         )
         return await CallbackQuery.edit_message_media(
             media=med, reply_markup=InlineKeyboardMarkup(buttons)
-        )
+          )
