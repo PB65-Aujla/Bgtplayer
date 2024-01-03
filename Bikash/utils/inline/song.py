@@ -1,6 +1,5 @@
 from pyrogram.types import InlineKeyboardButton
-
-from Bikash.utilities import config
+from Bikash import config
 
 def song_markup(_, vidid):
     buttons = [
