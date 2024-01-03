@@ -7,9 +7,9 @@
 # Commands in Every Language
 
 # Bot Commands
-PING_COMMAND : ["ping"]
+PING_COMMAND : ["mping"]
 START_COMMAND : ["start", "bs"]
-HELP_COMMAND : ["help"]
+HELP_COMMAND : ["mhelp"]
 SETTINGS_COMMAND : ["settings", "setting"]
 RELOAD_COMMAND : ["admincache", "reload"]
 GSTATS_COMMAND : ["gstats"]
