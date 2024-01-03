@@ -2,8 +2,8 @@ import math
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from Bikash.utilities import config
-from Bikash.modules.utils.formatters import time_to_seconds
+from Bikash import config
+from Bikash.utils.formatters import time_to_seconds
 
 
 
