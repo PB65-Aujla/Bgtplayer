@@ -12,15 +12,15 @@ def help_pannel(_, START: Union[bool, int] = None):
     second = [
         InlineKeyboardButton(
             # text=_["BACK_BUTTON"],
-            text="🏠 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 🏠",
-            url=f"https://t.me/BikashGadgetsTech",
+            text="🏠 🇭𝗢𝗠𝗘",
+            callback_data="Main_help",
         ),
         InlineKeyboardButton(
-            text="𝐂𝐫𝐞𝐚𝐭𝐨𝐫",
-            url=f"t.me/BikashHalder",
+            text="𝐂𝐫𝐞🙎𝐭𝐨𝐫",
+            url=f"t.me/PB65_Aujla",
         ),
         InlineKeyboardButton(
-            text="𝐂𝐥𝐨𝐬𝐞", callback_data=f"close"
+            text="𝐂𝐥𝐨𝐬𝐞 ❌", callback_data=f"close"
         ),
     ]
     mark = second if START else first
