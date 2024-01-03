@@ -1,35 +1,30 @@
 from typing import Union
-
 from pyrogram.types import InlineKeyboardButton
-from Bikash.config import SUPPORT_GROUP
+
+from Bikash.utilities.config import SUPPORT_GROUP
 
 
 def setting_markup(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text="𝐀𝐮𝐝𝐢𝐨 𝐐𝐮𝐚𝐥𝐢𝐭𝐲", callback_data="AQ"
+                text="ᴀᴜᴅɪᴏ ǫᴜᴀʟɪᴛʏ", callback_data="AQ"
             ),
             InlineKeyboardButton(
-                text="𝐕𝐢𝐝𝐞𝐨 𝐐𝐮𝐚𝐥𝐢𝐭𝐲", callback_data="VQ"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="𝐀𝐮𝐭𝐡 𝐔𝐬𝐞𝐫's", callback_data="AU"
-            ),
-            InlineKeyboardButton(
-                text="𝐂𝐥𝐞𝐚𝐧 𝐌𝐨𝐝𝐞", callback_data="CM"
-            ),
-        ],
-        [           
-            InlineKeyboardButton(
-                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+                text="ᴠɪᴅᴇᴏ ǫᴜᴀʟɪᴛʏ", callback_data="VQ"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="💖 𝐒𝐮𝐩𝐩𝐨𝐫𝐭 💖", url=f"{SUPPORT_GROUP}",
+                text="ᴀᴜᴛʜ ᴜsᴇʀs", callback_data="AU"
+            ),
+            InlineKeyboardButton(
+                text="ᴄʟᴇᴀɴ ᴍᴏᴅᴇ", callback_data="CM"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="• sᴜᴩᴩᴏʀᴛ •", url=f"{SUPPORT_GROUP}",
             ),
             InlineKeyboardButton(
                 text=_["CLOSE_BUTTON"], callback_data="close"
